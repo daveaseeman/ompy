@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-import sys
+# import sys
 import os
 import forecastio
 from geopy.geocoders import Nominatim
 
-from dotenv import load_dotenv, find_dotenv
-load_dotenv(find_dotenv())
+# from dotenv import load_dotenv, find_dotenv
+# load_dotenv(find_dotenv())
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
 
 def get_forecast(address):

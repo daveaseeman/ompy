@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request
-from weather import get_forecast
+from weather import get_forecast, get_map
 
 app = Flask(__name__)
 
@@ -9,11 +9,11 @@ app = Flask(__name__)
 def index():
     address = request.values.get('address')
     forecast = None
-    print(address)
+    map_src = None
     if address:
         forecast = get_forecast(address)
-        print(forecast)
-    return render_template('index.html', forecast=forecast)
+        map_src = get_map(address)
+    return render_template('index.html', forecast=forecast, map_src=map_src)
 
 
 @app.route('/about')
